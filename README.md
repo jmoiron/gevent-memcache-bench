@@ -16,53 +16,39 @@ attempts to use a greenpool to parallelize 2, 4, 8, and 16 ways.  Running
 results
 -------
 
-pylibmc: sync
-Write for 25000 keys: 1.32s, 18908.06/s (0.000 avg, 0.000 min, 0.002 max)
-Read for  25000 keys: 1.09s, 18908.06/s (0.000 avg, 0.000 min, 0.004 max)
 
+### pylibmc set (25000 keys)
 
-pylibmc: gevent-16
-Write 25000 keys: 2.13s, 11725.11/s (0.000 avg, 0.000 min, 0.003 max)
-Read  25000 keys: 1.76s, 11725.11/s (0.000 avg, 0.000 min, 0.005 max)
+               elapsed      rate       avg        min        max    
+    sync        1.410    17772.100    0.000      0.000      0.003   
+    gevent-16   2.200    11369.710    0.000      0.000      0.004   
+    gevent-08   2.860     8746.570    0.000      0.000      0.002   
+    gevent-04   3.480     7189.510    0.000      0.000      0.005   
+    gevent-02   3.060     8157.030    0.000      0.000      0.003   
 
+### pylibmc get (25000 keys)
 
-pylibmc: gevent-08
-Write 25000 keys: 2.82s, 8871.63/s (0.000 avg, 0.000 min, 0.003 max)
-Read  25000 keys: 2.00s, 8871.63/s (0.000 avg, 0.000 min, 0.001 max)
+               elapsed      rate       avg        min        max    
+    sync        1.310    17772.100    0.000      0.000      0.001   
+    gevent-16   2.220    11369.710    0.000      0.000      0.003   
+    gevent-08   2.470     8746.570    0.000      0.000      0.003   
+    gevent-04   2.030     7189.510    0.000      0.000      0.002   
+    gevent-02   2.620     8157.030    0.000      0.000      0.003   
 
+### ultramemcache set (25000 keys)
 
-pylibmc: gevent-04
-Write 25000 keys: 2.27s, 11009.34/s (0.000 avg, 0.000 min, 0.004 max)
-Read  25000 keys: 1.90s, 11009.34/s (0.000 avg, 0.000 min, 0.007 max)
+               elapsed      rate       avg        min        max    
+    sync        1.420    17573.050    0.000      0.000      0.003   
+    gevent-16   0.980    25587.990    0.000      0.000      0.002   
+    gevent-08   1.000    25033.070    0.000      0.000      0.010   
+    gevent-04   0.990    25145.390    0.000      0.000      0.003   
+    gevent-02   0.970    25808.930    0.000      0.000      0.002   
 
+### ultramemcache get (25000 keys)
 
-pylibmc: gevent-02
-Write 25000 keys: 3.14s, 7962.19/s (0.000 avg, 0.000 min, 0.002 max)
-Read  25000 keys: 2.40s, 7962.19/s (0.000 avg, 0.000 min, 0.002 max)
-
-
-ultramemcache: sync
-Write for 25000 keys: 1.17s, 21375.73/s (0.000 avg, 0.000 min, 0.002 max)
-Read for 25000 keys: 1.16s, 21375.73/s (0.000 avg, 0.000 min, 0.002 max)
-
-
-ultramemcache: gevent-16
-Write 25000 keys: 0.99s, 25230.86/s (0.000 avg, 0.000 min, 0.002 max)
-Read  25000 keys: 1.04s, 25230.86/s (0.000 avg, 0.000 min, 0.002 max)
-
-
-ultramemcache: gevent-08
-Write 25000 keys: 0.98s, 25427.85/s (0.000 avg, 0.000 min, 0.004 max)
-Read  25000 keys: 1.05s, 25427.85/s (0.000 avg, 0.000 min, 0.002 max)
-
-
-ultramemcache: gevent-04
-Write 25000 keys: 1.00s, 25004.15/s (0.000 avg, 0.000 min, 0.001 max)
-Read  25000 keys: 1.07s, 25004.15/s (0.000 avg, 0.000 min, 0.008 max)
-
-
-ultramemcache: gevent-02
-Write 25000 keys: 0.95s, 26322.44/s (0.000 avg, 0.000 min, 0.001 max)
-Read  25000 keys: 1.02s, 26322.44/s (0.000 avg, 0.000 min, 0.007 max)
-
-
+               elapsed      rate       avg        min        max    
+    sync        1.220    17573.050    0.000      0.000      0.003   
+    gevent-16   1.030    25587.990    0.000      0.000      0.002   
+    gevent-08   1.050    25033.070    0.000      0.000      0.002   
+    gevent-04   1.020    25145.390    0.000      0.000      0.002   
+    gevent-02   1.010    25808.930    0.000      0.000      0.003   

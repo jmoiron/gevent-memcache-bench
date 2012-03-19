@@ -43,11 +43,11 @@ if not all(read_outcomes):
     print "ERROR: %d read errors" % read_outcomes.count(False)
 
 n = len(data)
-print "Write %d keys: %0.2fs, %0.2f/s (%0.3f avg, %0.3f min, %0.3f max)" % (
+print "# num elapsed rate avg min max"
+print "%d %0.2f %0.2f %0.3f %0.3f %0.3f" % (
     n, t1-t0, n/(t1-t0), (t1-t0)/float(n), min(write_times), max(write_times)
 )
-print "Read  %d keys: %0.2fs, %0.2f/s (%0.3f avg, %0.3f min, %0.3f max)" % (
+print "%d %0.2f %0.2f %0.3f %0.3f %0.3f" % (
     n, t2-t1, n/(t1-t0), (t2-t1)/float(n), min(read_times), max(read_times)
 )
-
 

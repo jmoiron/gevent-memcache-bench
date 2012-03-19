@@ -9,7 +9,7 @@ even perhaps real world performance if you are storing large objects.
 method
 ------
 
-3 libraries are tested standalone (in a serial method) and under gevent which
+libraries are tested standalone (in a serial method) and under gevent which
 attempts to use a greenpool to parallelize 2, 4, 8, and 16 ways.  Running
 `test.py` will run all tests and update this file with the results.
 

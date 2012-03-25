@@ -1,7 +1,7 @@
-memcached test
---------------
+memcached/gevent benchmarks
+----------------------------
 
-Small repos with some testing scripts that attempt to profile the latency of
+Small repos with some testing scripts that attempt to benchmark the latency of
 making memcached requests with various python libraries.  The key/value pairs in
 data.json are all small strings (uuids), so this is not a test of throughput or
 even perhaps real world performance if you are storing large objects.
